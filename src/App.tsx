@@ -3,58 +3,62 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { runs, allSuites, specKey, type CompatRun } from "@/data/results";
+import { runs, allSuites, type CompatRun } from "@/data/results";
 
 type Filter = "all" | "anyFail" | "diff";
+
+interface GroupStatus {
+  pass: number;
+  total: number;
+}
+
+interface SubtestRow {
+  key: string;
+  name: string;
+  byTag: Record<string, boolean | undefined>;
+}
+
+interface SpecGroup {
+  key: string;
+  suite: string;
+  name: string;
+  isLeaf: boolean;
+  byTag: Record<string, GroupStatus>;
+  subtests: SubtestRow[];
+}
+
+const SPEC_COL_W = 320;
+const SUITE_COL_W = 84;
 
 export function App() {
   const [selectedTags, setSelectedTags] = useState<string[]>(
     runs.map((r) => r.tag),
   );
   const [suite, setSuite] = useState<string>("all");
-  const [filter, setFilter] = useState<Filter>("anyFail");
+  const [filter, setFilter] = useState<Filter>("all");
 
   const visibleRuns = useMemo(
     () => runs.filter((r) => selectedTags.includes(r.tag)),
     [selectedTags],
   );
 
-  const matrix = useMemo(
-    () => buildMatrix(visibleRuns, suite),
+  const groups = useMemo(
+    () => buildGroups(visibleRuns, suite),
     [visibleRuns, suite],
   );
 
-  const filteredRows = useMemo(() => {
-    if (filter === "all") return matrix.rows;
-    if (filter === "anyFail")
-      return matrix.rows.filter((row) =>
-        visibleRuns.some((r) => row.byTag[r.tag] === false),
-      );
-    return matrix.rows.filter((row) => {
-      const vals = visibleRuns
-        .map((r) => row.byTag[r.tag])
-        .filter((v) => v !== undefined);
-      return vals.some((v) => v !== vals[0]);
-    });
-  }, [matrix.rows, filter, visibleRuns]);
+  const visibleGroups = useMemo(
+    () => filterGroups(groups, filter, visibleRuns),
+    [groups, filter, visibleRuns],
+  );
 
-  if (runs.length === 0) {
-    return <EmptyState />;
-  }
+  if (runs.length === 0) return <EmptyState />;
 
   return (
     <div className="mx-auto max-w-[1400px] p-6 space-y-6">
@@ -76,8 +80,8 @@ export function App() {
         ))}
       </section>
 
-      <Card>
-        <CardHeader className="flex flex-wrap items-center justify-between gap-3">
+      <Card className="py-0 gap-0">
+        <CardHeader className="flex flex-wrap items-center justify-between gap-3 p-5">
           <CardTitle>Compatibility matrix</CardTitle>
           <div className="flex flex-wrap items-center gap-2">
             <SuiteSelect value={suite} onChange={setSuite} />
@@ -89,48 +93,142 @@ export function App() {
             />
           </div>
         </CardHeader>
-        <CardContent>
-          <div className="text-sm text-muted-foreground mb-3">
-            Showing {filteredRows.length} of {matrix.rows.length} spec
-            {matrix.rows.length === 1 ? "" : "s"}
-            {filter === "anyFail" && " (with at least one failure)"}
-            {filter === "diff" && " (differing across selected tags)"}
+        <CardContent className="p-0">
+          <div className="px-5 py-2 text-xs text-muted-foreground border-t">
+            Showing {visibleGroups.length} of {groups.length} group
+            {groups.length === 1 ? "" : "s"}
+            {filter === "anyFail" && " · only rows with at least one failure"}
+            {filter === "diff" && " · only rows differing across selected tags"}
           </div>
-          <div className="overflow-x-auto rounded-md border">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="w-[40%]">Spec</TableHead>
-                  <TableHead className="w-[120px]">Suite</TableHead>
-                  {visibleRuns.map((r) => (
-                    <TableHead key={r.tag} className="whitespace-nowrap">
-                      {shortTag(r.tag)}
-                    </TableHead>
-                  ))}
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {filteredRows.map((row) => (
-                  <TableRow key={row.key}>
-                    <TableCell className="font-mono text-xs">
-                      {row.path.join(" › ")}
-                    </TableCell>
-                    <TableCell>
-                      <Badge variant="outline">{row.suite}</Badge>
-                    </TableCell>
-                    {visibleRuns.map((r) => (
-                      <TableCell key={r.tag}>
-                        <ResultDot value={row.byTag[r.tag]} />
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
+          <Matrix groups={visibleGroups} runs={visibleRuns} />
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+function Matrix({
+  groups,
+  runs,
+}: {
+  groups: SpecGroup[];
+  runs: CompatRun[];
+}) {
+  return (
+    <div className="overflow-x-auto border-t">
+      <table className="w-full border-collapse text-sm">
+        <thead>
+          <tr className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">
+            <th
+              className="sticky left-0 z-20 bg-muted/50 px-3 py-2 text-left font-medium"
+              style={{ minWidth: SPEC_COL_W }}
+            >
+              Spec
+            </th>
+            <th
+              className="sticky z-20 bg-muted/50 px-3 py-2 text-left font-medium"
+              style={{ left: SPEC_COL_W, minWidth: SUITE_COL_W }}
+            >
+              Suite
+            </th>
+            {runs.map((r) => (
+              <th
+                key={r.tag}
+                className="px-3 py-2 text-center font-mono text-xs font-medium normal-case tracking-normal"
+                style={{ minWidth: 88 }}
+              >
+                {shortTag(r.tag)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {groups.map((g) => (
+            <GroupRows key={g.key} group={g} runs={runs} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function GroupRows({ group, runs }: { group: SpecGroup; runs: CompatRun[] }) {
+  const groupBg = "bg-muted/30";
+  return (
+    <>
+      <tr className={`${groupBg} border-t`}>
+        <td
+          className={`${groupBg} sticky left-0 z-10 px-3 py-2 font-medium`}
+          style={{ minWidth: SPEC_COL_W }}
+        >
+          {group.name}
+        </td>
+        <td
+          className={`${groupBg} sticky z-10 px-3 py-2`}
+          style={{ left: SPEC_COL_W, minWidth: SUITE_COL_W }}
+        >
+          <Badge variant="outline" className="font-mono text-[10px]">
+            {group.suite}
+          </Badge>
+        </td>
+        {runs.map((r) => (
+          <td key={r.tag} className="px-3 py-2 text-center">
+            <GroupStatusCell s={group.byTag[r.tag]} />
+          </td>
+        ))}
+      </tr>
+      {!group.isLeaf &&
+        group.subtests.map((s) => (
+          <tr key={s.key} className="bg-background border-t border-muted/40">
+            <td
+              className="bg-background sticky left-0 z-10 px-3 py-1.5 pl-8 text-xs text-muted-foreground"
+              style={{ minWidth: SPEC_COL_W }}
+            >
+              {s.name}
+            </td>
+            <td
+              className="bg-background sticky z-10 px-3 py-1.5"
+              style={{ left: SPEC_COL_W, minWidth: SUITE_COL_W }}
+            />
+            {runs.map((r) => (
+              <td key={r.tag} className="px-3 py-1.5 text-center">
+                <ResultDot v={s.byTag[r.tag]} />
+              </td>
+            ))}
+          </tr>
+        ))}
+    </>
+  );
+}
+
+function GroupStatusCell({ s }: { s: GroupStatus | undefined }) {
+  if (!s || s.total === 0)
+    return <span className="text-muted-foreground">—</span>;
+  if (s.pass === s.total)
+    return (
+      <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
+    );
+  if (s.pass === 0)
+    return (
+      <span className="inline-block h-2.5 w-2.5 rounded-full bg-rose-500" />
+    );
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500" />
+      <span className="font-mono text-[10px] text-muted-foreground">
+        {s.pass}/{s.total}
+      </span>
+    </span>
+  );
+}
+
+function ResultDot({ v }: { v: boolean | undefined }) {
+  if (v === undefined)
+    return <span className="text-muted-foreground">—</span>;
+  return v ? (
+    <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
+  ) : (
+    <span className="inline-block h-2.5 w-2.5 rounded-full bg-rose-500" />
   );
 }
 
@@ -240,16 +338,6 @@ function TagToggle({
   );
 }
 
-function ResultDot({ value }: { value: boolean | undefined }) {
-  if (value === undefined)
-    return <span className="text-muted-foreground">—</span>;
-  return value ? (
-    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-  ) : (
-    <span className="inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" />
-  );
-}
-
 function EmptyState() {
   return (
     <div className="p-12 text-center text-muted-foreground">
@@ -263,29 +351,119 @@ function shortTag(tag: string): string {
   return tag.replace(/^hermes-v/, "v");
 }
 
-interface MatrixRow {
-  key: string;
-  suite: string;
-  path: string[];
-  byTag: Record<string, boolean | undefined>;
-}
+function buildGroups(runs: CompatRun[], suiteFilter: string): SpecGroup[] {
+  type Acc = {
+    suite: string;
+    name: string;
+    isLeaf: boolean;
+    subtestMap: Map<string, SubtestRow>;
+  };
+  const map = new Map<string, Acc>();
 
-function buildMatrix(
-  runs: CompatRun[],
-  suiteFilter: string,
-): { rows: MatrixRow[] } {
-  const rowMap = new Map<string, MatrixRow>();
   for (const run of runs) {
     for (const r of run.results) {
       if (suiteFilter !== "all" && r.suite !== suiteFilter) continue;
-      const key = specKey(r.suite, r.path);
-      let row = rowMap.get(key);
-      if (!row) {
-        row = { key, suite: r.suite, path: r.path, byTag: {} };
-        rowMap.set(key, row);
+      const groupKey = `${r.suite}|${r.path[0]}`;
+      let acc = map.get(groupKey);
+      if (!acc) {
+        acc = {
+          suite: r.suite,
+          name: r.path[0],
+          isLeaf: r.path.length === 1,
+          subtestMap: new Map(),
+        };
+        map.set(groupKey, acc);
       }
-      row.byTag[run.tag] = r.pass;
+      // depth-1 leaf: one synthetic subtest under "_leaf_"
+      const subKey =
+        r.path.length === 1 ? "_leaf_" : r.path.slice(1).join(" › ");
+      let sub = acc.subtestMap.get(subKey);
+      if (!sub) {
+        sub = { key: `${groupKey}|${subKey}`, name: subKey, byTag: {} };
+        acc.subtestMap.set(subKey, sub);
+      }
+      sub.byTag[run.tag] = r.pass;
     }
   }
-  return { rows: Array.from(rowMap.values()) };
+
+  const out: SpecGroup[] = [];
+  for (const [key, acc] of map) {
+    const subtests = Array.from(acc.subtestMap.values());
+    const byTag: Record<string, GroupStatus> = {};
+    for (const run of runs) {
+      let pass = 0;
+      let total = 0;
+      for (const s of subtests) {
+        const v = s.byTag[run.tag];
+        if (v === undefined) continue;
+        total++;
+        if (v) pass++;
+      }
+      byTag[run.tag] = { pass, total };
+    }
+    out.push({
+      key,
+      suite: acc.suite,
+      name: acc.name,
+      isLeaf: acc.isLeaf,
+      byTag,
+      subtests: acc.isLeaf ? [] : subtests,
+    });
+  }
+
+  out.sort((a, b) =>
+    a.suite === b.suite
+      ? a.name.localeCompare(b.name)
+      : a.suite.localeCompare(b.suite),
+  );
+  return out;
+}
+
+function filterGroups(
+  groups: SpecGroup[],
+  filter: Filter,
+  runs: CompatRun[],
+): SpecGroup[] {
+  if (filter === "all") return groups;
+  const result: SpecGroup[] = [];
+  for (const g of groups) {
+    if (g.isLeaf) {
+      const vals = runs.map((r) => g.byTag[r.tag]);
+      const allPass = vals.every((v) => v && v.pass === v.total && v.total > 0);
+      const allSame = vals.every(
+        (v) =>
+          v &&
+          v.pass === vals[0]?.pass &&
+          v.total === vals[0]?.total,
+      );
+      if (filter === "anyFail" && allPass) continue;
+      if (filter === "diff" && allSame) continue;
+      result.push(g);
+      continue;
+    }
+    const subtests = g.subtests.filter((s) => {
+      const vals = runs.map((r) => s.byTag[r.tag]);
+      if (filter === "anyFail") return vals.some((v) => v === false);
+      const first = vals[0];
+      return vals.some((v) => v !== first);
+    });
+    if (subtests.length === 0) continue;
+
+    // Recompute group aggregate for the filtered subset so the header
+    // reflects what's visible.
+    const byTag: Record<string, GroupStatus> = {};
+    for (const run of runs) {
+      let pass = 0;
+      let total = 0;
+      for (const s of subtests) {
+        const v = s.byTag[run.tag];
+        if (v === undefined) continue;
+        total++;
+        if (v) pass++;
+      }
+      byTag[run.tag] = { pass, total };
+    }
+    result.push({ ...g, subtests, byTag });
+  }
+  return result;
 }
