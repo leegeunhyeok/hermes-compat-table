@@ -29,12 +29,15 @@ echo "==> Checking out $TAG"
 git -C "$SRC_DIR" checkout --detach "refs/tags/$TAG"
 
 echo "==> Configuring CMake -> $BUILD_DIR"
+# CMake 4.x dropped OLD behavior for legacy policies (e.g. CMP0026) that older
+# Hermes tags depend on; this flag puts CMake in 3.5-era compatibility mode.
+CMAKE_FLAGS=(-DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5)
 if command -v ninja >/dev/null 2>&1; then
   echo "    Using Ninja generator"
-  cmake -S "$SRC_DIR" -B "$BUILD_DIR" -G Ninja -DCMAKE_BUILD_TYPE=Release
+  cmake -S "$SRC_DIR" -B "$BUILD_DIR" -G Ninja "${CMAKE_FLAGS[@]}"
 else
   echo "    Using default (Make) generator"
-  cmake -S "$SRC_DIR" -B "$BUILD_DIR" -DCMAKE_BUILD_TYPE=Release
+  cmake -S "$SRC_DIR" -B "$BUILD_DIR" "${CMAKE_FLAGS[@]}"
 fi
 
 JOBS="$(sysctl -n hw.ncpu 2>/dev/null || nproc 2>/dev/null || echo 4)"

@@ -1,5 +1,6 @@
 export interface CompatResultRow {
   suite: string;
+  category: string | null;
   path: string[];
   pass: boolean;
 }

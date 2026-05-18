@@ -1,5 +1,8 @@
 [tools]
 node = "24"
+# CMake 4.x removed OLD behavior for legacy policies (CMP0026, …) that older
+# Hermes tags still rely on. Pin to the last 3.x line so all tags build.
+cmake = "3.31.12"
 
 [tasks."build:hermes"]
 description = "Clone and build Hermes (hermes + hermesc) at a specific tag. Usage: mise run build:hermes <tag>"

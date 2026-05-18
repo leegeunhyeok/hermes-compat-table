@@ -1,6 +1,4 @@
-import { useMemo, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -9,6 +7,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { runs, allSuites, type CompatRun } from "@/data/results";
 
 type Filter = "all" | "anyFail" | "diff";
@@ -27,14 +33,17 @@ interface SubtestRow {
 interface SpecGroup {
   key: string;
   suite: string;
+  category: string | null;
   name: string;
   isLeaf: boolean;
   byTag: Record<string, GroupStatus>;
   subtests: SubtestRow[];
 }
 
-const SPEC_COL_W = 320;
-const SUITE_COL_W = 84;
+// compat-table palette
+const COLOR_PASS = "#44ab44";
+const COLOR_PARTIAL = "#acc20a";
+const COLOR_FAIL = "#e11";
 
 export function App() {
   const [selectedTags, setSelectedTags] = useState<string[]>(
@@ -42,6 +51,10 @@ export function App() {
   );
   const [suite, setSuite] = useState<string>("all");
   const [filter, setFilter] = useState<Filter>("all");
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleExpanded = (key: string) =>
+    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
 
   const visibleRuns = useMemo(
     () => runs.filter((r) => selectedTags.includes(r.tag)),
@@ -58,51 +71,50 @@ export function App() {
     [groups, filter, visibleRuns],
   );
 
+  const suiteStats = useMemo(
+    () => buildSuiteStats(visibleRuns),
+    [visibleRuns],
+  );
+
   if (runs.length === 0) return <EmptyState />;
 
   return (
     <div className="mx-auto max-w-[1400px] p-6 space-y-6">
-      <header className="flex items-baseline justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold">Hermes Compat Table</h1>
-          <p className="text-sm text-muted-foreground">
-            compat-table spec results across Hermes release tags
-          </p>
-        </div>
-        <div className="text-sm text-muted-foreground">
-          {runs.length} run{runs.length === 1 ? "" : "s"} indexed
-        </div>
+      <header className="flex items-center justify-between">
+        <h1 className="text-2xl font-semibold">Hermes Compat Table</h1>
+        <Button
+          asChild
+          variant="ghost"
+          size="icon"
+          aria-label="View on GitHub"
+        >
+          <a
+            href="https://github.com/leegeunhyeok/hermes-compat-table"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <GitHubIcon />
+          </a>
+        </Button>
       </header>
 
-      <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-        {visibleRuns.map((r) => (
-          <SummaryCard key={r.tag} run={r} />
-        ))}
-      </section>
+      <div className="flex flex-wrap items-center justify-end gap-2">
+        <SuiteSelect value={suite} onChange={setSuite} />
+        <FilterSelect value={filter} onChange={setFilter} />
+        <TagToggle
+          tags={runs.map((r) => r.tag)}
+          selected={selectedTags}
+          onChange={setSelectedTags}
+        />
+      </div>
 
-      <Card className="py-0 gap-0">
-        <CardHeader className="flex flex-wrap items-center justify-between gap-3 p-5">
-          <CardTitle>Compatibility matrix</CardTitle>
-          <div className="flex flex-wrap items-center gap-2">
-            <SuiteSelect value={suite} onChange={setSuite} />
-            <FilterSelect value={filter} onChange={setFilter} />
-            <TagToggle
-              tags={runs.map((r) => r.tag)}
-              selected={selectedTags}
-              onChange={setSelectedTags}
-            />
-          </div>
-        </CardHeader>
-        <CardContent className="p-0">
-          <div className="px-5 py-2 text-xs text-muted-foreground border-t">
-            Showing {visibleGroups.length} of {groups.length} group
-            {groups.length === 1 ? "" : "s"}
-            {filter === "anyFail" && " · only rows with at least one failure"}
-            {filter === "diff" && " · only rows differing across selected tags"}
-          </div>
-          <Matrix groups={visibleGroups} runs={visibleRuns} />
-        </CardContent>
-      </Card>
+      <Matrix
+        groups={visibleGroups}
+        runs={visibleRuns}
+        suiteStats={suiteStats}
+        expanded={expanded}
+        onToggle={toggleExpanded}
+      />
     </div>
   );
 }
@@ -110,152 +122,215 @@ export function App() {
 function Matrix({
   groups,
   runs,
+  suiteStats,
+  expanded,
+  onToggle,
 }: {
   groups: SpecGroup[];
   runs: CompatRun[];
+  suiteStats: Record<string, Record<string, GroupStatus>>;
+  expanded: Record<string, boolean>;
+  onToggle: (key: string) => void;
 }) {
   return (
-    <div className="overflow-x-auto border-t">
-      <table className="w-full border-collapse text-sm">
-        <thead>
-          <tr className="bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground">
-            <th
-              className="sticky left-0 z-20 bg-muted/50 px-3 py-2 text-left font-medium"
-              style={{ minWidth: SPEC_COL_W }}
+    <Table className="text-xs">
+      <TableHeader>
+        <TableRow>
+          <TableHead className="h-8 px-2">Spec</TableHead>
+          {runs.map((r) => (
+            <TableHead
+              key={r.tag}
+              className="h-8 px-2 text-center font-mono"
             >
-              Spec
-            </th>
-            <th
-              className="sticky z-20 bg-muted/50 px-3 py-2 text-left font-medium"
-              style={{ left: SPEC_COL_W, minWidth: SUITE_COL_W }}
-            >
-              Suite
-            </th>
-            {runs.map((r) => (
-              <th
-                key={r.tag}
-                className="px-3 py-2 text-center font-mono text-xs font-medium normal-case tracking-normal"
-                style={{ minWidth: 88 }}
-              >
-                {shortTag(r.tag)}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {groups.map((g) => (
-            <GroupRows key={g.key} group={g} runs={runs} />
+              <div>{shortTag(r.tag)}</div>
+              <div className="text-[10px] font-normal">
+                {formatPct(r.summary.pass, r.summary.executed)}
+              </div>
+            </TableHead>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {groups.map((g, i) => {
+          const prev = i > 0 ? groups[i - 1]! : null;
+          const showSuiteHeader = !prev || g.suite !== prev.suite;
+          const showCategoryHeader =
+            g.category != null &&
+            (showSuiteHeader || g.category !== prev?.category);
+          return (
+            <Fragment key={g.key}>
+              {showSuiteHeader && (
+                <TableRow className="bg-muted/60 hover:bg-muted/60">
+                  <TableCell className="px-2 py-1.5 font-semibold uppercase tracking-wide">
+                    {g.suite}
+                  </TableCell>
+                  {runs.map((r) => {
+                    const s = suiteStats[g.suite]?.[r.tag];
+                    return (
+                      <TableCell
+                        key={r.tag}
+                        className="px-2 py-1.5 text-center font-mono text-muted-foreground"
+                      >
+                        {s ? formatPct(s.pass, s.total) : "—"}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              )}
+              {showCategoryHeader && (
+                <TableRow className="bg-muted/30 hover:bg-muted/30">
+                  <TableCell
+                    colSpan={runs.length + 1}
+                    className="px-2 py-1 pl-4 font-medium text-muted-foreground"
+                  >
+                    {g.category}
+                  </TableCell>
+                </TableRow>
+              )}
+              <GroupRows
+                group={g}
+                runs={runs}
+                expanded={!!expanded[g.key]}
+                onToggle={() => onToggle(g.key)}
+              />
+            </Fragment>
+          );
+        })}
+      </TableBody>
+    </Table>
   );
 }
 
-function GroupRows({ group, runs }: { group: SpecGroup; runs: CompatRun[] }) {
-  const groupBg = "bg-muted/30";
+function formatPct(pass: number, total: number): string {
+  if (total === 0) return "—";
+  return `${((pass / total) * 100).toFixed(1)}%`;
+}
+
+function buildSuiteStats(
+  runs: CompatRun[],
+): Record<string, Record<string, GroupStatus>> {
+  const out: Record<string, Record<string, GroupStatus>> = {};
+  for (const run of runs) {
+    for (const r of run.results) {
+      let bySuite = out[r.suite];
+      if (!bySuite) {
+        bySuite = {};
+        out[r.suite] = bySuite;
+      }
+      let s = bySuite[run.tag];
+      if (!s) {
+        s = { pass: 0, total: 0 };
+        bySuite[run.tag] = s;
+      }
+      s.total++;
+      if (r.pass) s.pass++;
+    }
+  }
+  return out;
+}
+
+function GroupRows({
+  group,
+  runs,
+  expanded,
+  onToggle,
+}: {
+  group: SpecGroup;
+  runs: CompatRun[];
+  expanded: boolean;
+  onToggle: () => void;
+}) {
+  const isExpandable = !group.isLeaf;
   return (
     <>
-      <tr className={`${groupBg} border-t`}>
-        <td
-          className={`${groupBg} sticky left-0 z-10 px-3 py-2 font-medium`}
-          style={{ minWidth: SPEC_COL_W }}
+      <TableRow>
+        <TableCell
+          className={`px-2 py-1.5 font-medium ${isExpandable ? "cursor-pointer select-none" : ""}`}
+          onClick={isExpandable ? onToggle : undefined}
         >
-          {group.name}
-        </td>
-        <td
-          className={`${groupBg} sticky z-10 px-3 py-2`}
-          style={{ left: SPEC_COL_W, minWidth: SUITE_COL_W }}
-        >
-          <Badge variant="outline" className="font-mono text-[10px]">
-            {group.suite}
-          </Badge>
-        </td>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="inline-block w-3 text-[10px] text-muted-foreground">
+              {isExpandable ? (expanded ? "▾" : "▸") : ""}
+            </span>
+            <span>{group.name}</span>
+          </span>
+        </TableCell>
         {runs.map((r) => (
-          <td key={r.tag} className="px-3 py-2 text-center">
-            <GroupStatusCell s={group.byTag[r.tag]} />
-          </td>
+          <GroupStatusCell
+            key={r.tag}
+            s={group.byTag[r.tag]}
+            isLeaf={group.isLeaf}
+          />
         ))}
-      </tr>
-      {!group.isLeaf &&
+      </TableRow>
+      {isExpandable &&
+        expanded &&
         group.subtests.map((s) => (
-          <tr key={s.key} className="bg-background border-t border-muted/40">
-            <td
-              className="bg-background sticky left-0 z-10 px-3 py-1.5 pl-8 text-xs text-muted-foreground"
-              style={{ minWidth: SPEC_COL_W }}
-            >
+          <TableRow key={s.key}>
+            <TableCell className="px-2 py-1 pl-8 text-muted-foreground">
               {s.name}
-            </td>
-            <td
-              className="bg-background sticky z-10 px-3 py-1.5"
-              style={{ left: SPEC_COL_W, minWidth: SUITE_COL_W }}
-            />
+            </TableCell>
             {runs.map((r) => (
-              <td key={r.tag} className="px-3 py-1.5 text-center">
-                <ResultDot v={s.byTag[r.tag]} />
-              </td>
+              <ResultCell key={r.tag} v={s.byTag[r.tag]} />
             ))}
-          </tr>
+          </TableRow>
         ))}
     </>
   );
 }
 
-function GroupStatusCell({ s }: { s: GroupStatus | undefined }) {
-  if (!s || s.total === 0)
-    return <span className="text-muted-foreground">—</span>;
-  if (s.pass === s.total)
+function GroupStatusCell({
+  s,
+  isLeaf,
+}: {
+  s: GroupStatus | undefined;
+  isLeaf: boolean;
+}) {
+  if (!s || s.total === 0) {
     return (
-      <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
+      <TableCell className="px-2 py-1.5 text-center text-muted-foreground">
+        —
+      </TableCell>
     );
-  if (s.pass === 0)
-    return (
-      <span className="inline-block h-2.5 w-2.5 rounded-full bg-rose-500" />
-    );
+  }
+  const allPass = s.pass === s.total;
+  const allFail = s.pass === 0;
+  const bg = allPass ? COLOR_PASS : allFail ? COLOR_FAIL : COLOR_PARTIAL;
+  const label = isLeaf
+    ? allPass
+      ? "yes"
+      : "no"
+    : allPass
+      ? `${s.total}/${s.total}`
+      : allFail
+        ? `0/${s.total}`
+        : `${s.pass}/${s.total}`;
   return (
-    <span className="inline-flex items-center gap-1.5">
-      <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500" />
-      <span className="font-mono text-[10px] text-muted-foreground">
-        {s.pass}/{s.total}
-      </span>
-    </span>
+    <TableCell
+      className="px-2 py-1.5 text-center font-mono text-white"
+      style={{ backgroundColor: bg }}
+    >
+      {label}
+    </TableCell>
   );
 }
 
-function ResultDot({ v }: { v: boolean | undefined }) {
-  if (v === undefined)
-    return <span className="text-muted-foreground">—</span>;
-  return v ? (
-    <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
-  ) : (
-    <span className="inline-block h-2.5 w-2.5 rounded-full bg-rose-500" />
-  );
-}
-
-function SummaryCard({ run }: { run: CompatRun }) {
-  const ratio = (run.summary.pass / Math.max(1, run.summary.executed)) * 100;
+function ResultCell({ v }: { v: boolean | undefined }) {
+  if (v === undefined) {
+    return (
+      <TableCell className="px-2 py-1 text-center text-muted-foreground">
+        —
+      </TableCell>
+    );
+  }
+  const bg = v ? COLOR_PASS : COLOR_FAIL;
   return (
-    <Card>
-      <CardHeader className="pb-2">
-        <CardTitle className="text-base font-mono">{run.tag}</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-2">
-        <div className="text-3xl font-semibold">
-          {ratio.toFixed(1)}
-          <span className="text-base text-muted-foreground">%</span>
-        </div>
-        <div className="text-sm text-muted-foreground">
-          {run.summary.pass} pass / {run.summary.fail} fail /{" "}
-          {run.summary.executed} total
-        </div>
-        <div className="flex flex-wrap gap-1 text-xs text-muted-foreground">
-          <span>{run.hermesVersion}</span>
-          {run.hermesSha && (
-            <span className="font-mono">· {run.hermesSha.slice(0, 7)}</span>
-          )}
-        </div>
-      </CardContent>
-    </Card>
+    <TableCell
+      className="px-2 py-1 text-center font-mono text-white"
+      style={{ backgroundColor: bg }}
+    >
+      {v ? "yes" : "no"}
+    </TableCell>
   );
 }
 
@@ -313,28 +388,82 @@ function TagToggle({
   selected: string[];
   onChange: (next: string[]) => void;
 }) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const toggle = (t: string) => {
+    const on = selected.includes(t);
+    if (on && selected.length === 1) return;
+    onChange(on ? selected.filter((x) => x !== t) : [...selected, t]);
+  };
+
   return (
-    <div className="flex flex-wrap gap-1">
-      {tags.map((t) => {
-        const on = selected.includes(t);
-        return (
-          <Button
-            key={t}
-            size="sm"
-            variant={on ? "default" : "outline"}
-            onClick={() => {
-              if (on && selected.length === 1) return;
-              onChange(
-                on ? selected.filter((x) => x !== t) : [...selected, t],
-              );
-            }}
-            className="font-mono text-xs"
-          >
-            {shortTag(t)}
-          </Button>
-        );
-      })}
+    <div ref={rootRef} className="relative">
+      <Button
+        size="sm"
+        variant="outline"
+        onClick={() => setOpen((v) => !v)}
+        className="font-mono text-xs"
+      >
+        Results · {selected.length}/{tags.length} ▾
+      </Button>
+      {open && (
+        <div className="absolute right-0 z-30 mt-1 min-w-[200px] rounded-md border bg-popover p-1 shadow-md">
+          {tags.map((t) => {
+            const on = selected.includes(t);
+            const disabled = on && selected.length === 1;
+            return (
+              <label
+                key={t}
+                className={`flex items-center gap-2 rounded px-2 py-1.5 text-sm font-mono ${
+                  disabled
+                    ? "cursor-not-allowed opacity-60"
+                    : "cursor-pointer hover:bg-accent"
+                }`}
+              >
+                <input
+                  type="checkbox"
+                  className="h-3.5 w-3.5"
+                  checked={on}
+                  disabled={disabled}
+                  onChange={() => toggle(t)}
+                />
+                <span>{shortTag(t)}</span>
+              </label>
+            );
+          })}
+        </div>
+      )}
     </div>
+  );
+}
+
+function GitHubIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M12 .5C5.65.5.5 5.65.5 12.04c0 5.1 3.29 9.41 7.86 10.94.58.1.78-.25.78-.55v-1.94c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.74-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.79.55 4.56-1.53 7.85-5.84 7.85-10.94C23.5 5.65 18.35.5 12 .5z" />
+    </svg>
   );
 }
 
@@ -348,12 +477,15 @@ function EmptyState() {
 }
 
 function shortTag(tag: string): string {
+  const date = /^hermes-(\d{4}-\d{2}-\d{2})/.exec(tag);
+  if (date) return `hermes-${date[1]}`;
   return tag.replace(/^hermes-v/, "v");
 }
 
 function buildGroups(runs: CompatRun[], suiteFilter: string): SpecGroup[] {
   type Acc = {
     suite: string;
+    category: string | null;
     name: string;
     isLeaf: boolean;
     subtestMap: Map<string, SubtestRow>;
@@ -368,6 +500,7 @@ function buildGroups(runs: CompatRun[], suiteFilter: string): SpecGroup[] {
       if (!acc) {
         acc = {
           suite: r.suite,
+          category: r.category ?? null,
           name: r.path[0],
           isLeaf: r.path.length === 1,
           subtestMap: new Map(),
@@ -404,6 +537,7 @@ function buildGroups(runs: CompatRun[], suiteFilter: string): SpecGroup[] {
     out.push({
       key,
       suite: acc.suite,
+      category: acc.category,
       name: acc.name,
       isLeaf: acc.isLeaf,
       byTag,
@@ -411,11 +545,13 @@ function buildGroups(runs: CompatRun[], suiteFilter: string): SpecGroup[] {
     });
   }
 
-  out.sort((a, b) =>
-    a.suite === b.suite
-      ? a.name.localeCompare(b.name)
-      : a.suite.localeCompare(b.suite),
-  );
+  out.sort((a, b) => {
+    if (a.suite !== b.suite) return a.suite.localeCompare(b.suite);
+    const ca = a.category ?? "";
+    const cb = b.category ?? "";
+    if (ca !== cb) return ca.localeCompare(cb);
+    return a.name.localeCompare(b.name);
+  });
   return out;
 }
 

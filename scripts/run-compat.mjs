@@ -2,9 +2,9 @@
 // Run compat-table specs against a built Hermes interpreter and write
 // the pass/fail matrix to results/<tag>.json.
 //
-// Usage: node scripts/run-compat.mjs <tag> [--suite es5,es6,...] [--limit N]
+// Usage: node scripts/run-compat.mjs <tag>
 
-import { execFile, execFileSync, spawnSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { mkdirSync, readdirSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
@@ -19,13 +19,9 @@ const SCRIPTS_DIR = join(ROOT, "scripts");
 const args = process.argv.slice(2);
 const tag = args[0];
 if (!tag) {
-  console.error("Usage: run-compat.mjs <tag> [--suite es5,es6,...] [--limit N]");
+  console.error("Usage: run-compat.mjs <tag>");
   process.exit(1);
 }
-
-const flags = parseFlags(args.slice(1));
-const suiteFilter = flags.suite ? new Set(flags.suite.split(",")) : null;
-const limit = flags.limit ? Number(flags.limit) : Infinity;
 
 const hermesBin = join(ROOT, "bin", tag, "hermes");
 if (!existsSync(hermesBin)) {
@@ -49,8 +45,7 @@ const dataFiles = readdirSync(COMPAT_DIR)
   .map((f) => ({
     suite: f.replace(/^data-(.*)\.js$/, "$1"),
     path: join(COMPAT_DIR, f),
-  }))
-  .filter((d) => !suiteFilter || suiteFilter.has(d.suite));
+  }));
 
 const hermesVersionOut = execFileSync(hermesBin, ["-version"], {
   encoding: "utf8",
@@ -92,10 +87,8 @@ for (const { suite, path } of dataFiles) {
   if (!mod.tests) continue;
 
   for (const test of mod.tests) {
-    walk(suite, [], test);
-    if (executed >= limit) break;
+    walk(suite, test.category ?? null, [], test);
   }
-  if (executed >= limit) break;
 }
 
 mkdirSync(RESULTS_DIR, { recursive: true });
@@ -121,9 +114,7 @@ console.log(
 );
 console.log(`[run:compat] wrote ${outPath}`);
 
-function walk(suite, parents, test) {
-  if (executed >= limit) return;
-
+function walk(suite, category, parents, test) {
   const code = extractTestCode(test.exec);
   if (code !== undefined) {
     const path = [...parents, test.name];
@@ -133,14 +124,13 @@ function walk(suite, parents, test) {
     } else {
       executed++;
       if (actual === true) pass++;
-      results.push({ suite, path, pass: actual === true });
+      results.push({ suite, category, path, pass: actual === true });
     }
   }
 
   if (Array.isArray(test.subtests)) {
     for (const sub of test.subtests) {
-      walk(suite, [...parents, test.name], sub);
-      if (executed >= limit) return;
+      walk(suite, category, [...parents, test.name], sub);
     }
   }
 }
@@ -202,20 +192,3 @@ function runOne(suite, path, evalcode) {
   }
 }
 
-function parseFlags(arr) {
-  const out = {};
-  for (let i = 0; i < arr.length; i++) {
-    const a = arr[i];
-    if (a.startsWith("--")) {
-      const key = a.slice(2);
-      const next = arr[i + 1];
-      if (next && !next.startsWith("--")) {
-        out[key] = next;
-        i++;
-      } else {
-        out[key] = true;
-      }
-    }
-  }
-  return out;
-}
