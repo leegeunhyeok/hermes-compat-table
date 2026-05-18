@@ -1,8 +1,8 @@
 {
-  "tag": "hermes-v250829098.0.2",
-  "hermesSha": "fa94d8cb30fd7ee455e3589de84a1b68811e8bc2",
+  "tag": "hermes-v250829098.0.4",
+  "hermesSha": "922779f8f0d18b3865492751c832614b1e34fbac",
   "hermesVersion": "Hermes 1.0.0 (HBC 98)",
-  "generatedAt": "2026-05-18T14:19:40.834Z",
+  "generatedAt": "2026-05-18T14:43:49.019Z",
   "summary": {
     "executed": 1207,
     "pass": 844,

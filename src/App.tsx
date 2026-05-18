@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -15,6 +16,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { runs, allSuites, type CompatRun } from "@/data/results";
 
 type Filter = "all" | "anyFail" | "diff";
@@ -79,6 +86,7 @@ export function App() {
   if (runs.length === 0) return <EmptyState />;
 
   return (
+    <TooltipProvider delayDuration={150}>
     <div className="mx-auto max-w-[1400px] p-6 space-y-6">
       <header className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Hermes Compat Table</h1>
@@ -116,6 +124,7 @@ export function App() {
         onToggle={toggleExpanded}
       />
     </div>
+    </TooltipProvider>
   );
 }
 
@@ -140,8 +149,28 @@ function Matrix({
           {runs.map((r) => (
             <TableHead
               key={r.tag}
-              className="h-8 px-2 text-center font-mono"
+              className="px-2 py-1.5 text-center font-mono align-bottom"
             >
+              <div className="flex justify-center gap-1 pb-1">
+                {r.reactNativeVersion && (
+                  <Badge
+                    variant="outline"
+                    className="px-1.5 py-0 text-[9px] font-medium"
+                  >
+                    {r.reactNativeVersion}
+                  </Badge>
+                )}
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Badge
+                      className={`border-transparent px-1.5 py-0 text-[9px] font-medium text-white cursor-help ${typeBadgeColor(r.type)}`}
+                    >
+                      {typeLabel(r.type)}
+                    </Badge>
+                  </TooltipTrigger>
+                  <TooltipContent>{typeTooltip(r.type)}</TooltipContent>
+                </Tooltip>
+              </div>
               <div>{shortTag(r.tag)}</div>
               <div className="text-[10px] font-normal">
                 {formatPct(r.summary.pass, r.summary.executed)}
@@ -480,6 +509,39 @@ function shortTag(tag: string): string {
   const date = /^hermes-(\d{4}-\d{2}-\d{2})/.exec(tag);
   if (date) return `hermes-${date[1]}`;
   return tag.replace(/^hermes-v/, "v");
+}
+
+function typeLabel(type: CompatRun["type"]): string {
+  switch (type) {
+    case "hermes-legacy":
+      return "legacy";
+    case "hermes-v1":
+      return "v1";
+    case "static-hermes":
+      return "static";
+  }
+}
+
+function typeTooltip(type: CompatRun["type"]): string {
+  switch (type) {
+    case "hermes-legacy":
+      return "Older Hermes engine.";
+    case "hermes-v1":
+      return "Next-gen Hermes engine, introduced in React Native 0.82.";
+    case "static-hermes":
+      return "Upcoming next-gen engine. Not yet officially released.";
+  }
+}
+
+function typeBadgeColor(type: CompatRun["type"]): string {
+  switch (type) {
+    case "hermes-legacy":
+      return "bg-slate-500 hover:bg-slate-500/80";
+    case "hermes-v1":
+      return "bg-sky-600 hover:bg-sky-600/80";
+    case "static-hermes":
+      return "bg-emerald-600 hover:bg-emerald-600/80";
+  }
 }
 
 function buildGroups(runs: CompatRun[], suiteFilter: string): SpecGroup[] {

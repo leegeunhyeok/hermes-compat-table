@@ -1,0 +1,21 @@
+[
+  {
+    "label": "hermes-2024-04-29-RNv0.72.14-3815fec63d1a6667ca3195160d6e12fee6a0d8d5",
+    "type": "hermes-legacy",
+    "reactNativeVersion": "0.72"
+  },
+  {
+    "label": "hermes-v250829098.0.4",
+    "type": "hermes-v1",
+    "reactNativeVersion": "0.83"
+  },
+  {
+    "label": "hermes-v250829098.0.13",
+    "type": "hermes-v1",
+    "reactNativeVersion": "0.87"
+  },
+  {
+    "label": "hermes-8a30722a",
+    "type": "static-hermes"
+  }
+]
