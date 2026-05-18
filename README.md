@@ -36,6 +36,21 @@ Available tags can be listed with:
 git ls-remote --tags https://github.com/facebook/hermes.git | grep hermes-v
 ```
 
+## Dashboard
+
+A static dashboard reads everything under `results/` and renders a
+per-spec pass/fail matrix across Hermes tags.
+
+```sh
+yarn install      # first time only
+mise run web:dev      # local dev (http://localhost:5173)
+mise run web:build    # static build to dist/
+mise run web:preview  # serve dist/ locally
+```
+
+Adding a new tag to the dashboard is just `mise run run:compat <tag>` —
+the JSON drops into `results/` and the next build picks it up.
+
 ## Run compat-table specs against Hermes
 
 ```sh

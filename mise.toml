@@ -8,3 +8,15 @@ run = "./scripts/build-hermes.sh"
 [tasks."run:compat"]
 description = "Run compat-table specs against built Hermes for <tag>. Builds automatically if binary missing. Usage: mise run run:compat <tag>"
 run = "node ./scripts/run-compat.mjs"
+
+[tasks."web:dev"]
+description = "Start Vite dev server for the dashboard"
+run = "yarn dev"
+
+[tasks."web:build"]
+description = "Build the dashboard as a static site to dist/"
+run = "yarn build"
+
+[tasks."web:preview"]
+description = "Preview the production build locally"
+run = "yarn preview"

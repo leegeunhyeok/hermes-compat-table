@@ -12,6 +12,7 @@ build/
 out/
 bin/
 .cache/
+*.tsbuildinfo
 
 .DS_Store
 *.log
