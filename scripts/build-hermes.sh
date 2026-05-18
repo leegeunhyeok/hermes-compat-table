@@ -25,8 +25,15 @@ fi
 echo "==> Fetching tags"
 git -C "$SRC_DIR" fetch --tags --force origin
 
-echo "==> Checking out $TAG"
-git -C "$SRC_DIR" checkout --detach "refs/tags/$TAG"
+# Identifier `hermes-<hex>` (≥7 hex chars) means "check out this commit SHA";
+# anything else is treated as an annotated tag name.
+if [[ "$TAG" =~ ^hermes-[0-9a-f]{7,40}$ ]]; then
+  REF="${TAG#hermes-}"
+else
+  REF="refs/tags/$TAG"
+fi
+echo "==> Checking out $REF"
+git -C "$SRC_DIR" checkout --detach "$REF"
 
 echo "==> Configuring CMake -> $BUILD_DIR"
 # CMake 4.x dropped OLD behavior for legacy policies (e.g. CMP0026) that older

@@ -2,11 +2,11 @@
   "tag": "hermes-2024-04-29-RNv0.72.14-3815fec63d1a6667ca3195160d6e12fee6a0d8d5",
   "hermesSha": "3815fec63d1a6667ca3195160d6e12fee6a0d8d5",
   "hermesVersion": "Hermes 0.12.0 (HBC 94)",
-  "generatedAt": "2026-05-18T13:43:42.150Z",
+  "generatedAt": "2026-05-18T14:19:44.426Z",
   "summary": {
-    "executed": 1199,
+    "executed": 1207,
     "pass": 706,
-    "fail": 493,
+    "fail": 501,
     "skipped": 0
   },
   "results": [
@@ -10723,6 +10723,78 @@
       "category": null,
       "path": [
         "Proxy \"ownKeys\" handler, duplicate keys for non-extensible targets (ES 2017 semantics)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "async arrow with non-simple parameters",
+        "rest parameter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "async arrow with non-simple parameters",
+        "default parameter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "async arrow with non-simple parameters",
+        "destructured parameter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "class declaration in finally block",
+        "static field"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "class declaration in finally block",
+        "instance field"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "class declaration in finally block",
+        "private method"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "super in object literal accessor",
+        "non-computed getter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "super in object literal accessor",
+        "non-computed setter"
       ],
       "pass": false
     }

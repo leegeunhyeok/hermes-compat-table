@@ -2,11 +2,11 @@
   "tag": "hermes-v250829098.0.2",
   "hermesSha": "fa94d8cb30fd7ee455e3589de84a1b68811e8bc2",
   "hermesVersion": "Hermes 1.0.0 (HBC 98)",
-  "generatedAt": "2026-05-18T13:19:40.651Z",
+  "generatedAt": "2026-05-18T14:19:40.834Z",
   "summary": {
-    "executed": 1199,
+    "executed": 1207,
     "pass": 844,
-    "fail": 355,
+    "fail": 363,
     "skipped": 0
   },
   "results": [
@@ -10723,6 +10723,78 @@
       "category": null,
       "path": [
         "Proxy \"ownKeys\" handler, duplicate keys for non-extensible targets (ES 2017 semantics)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "async arrow with non-simple parameters",
+        "rest parameter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "async arrow with non-simple parameters",
+        "default parameter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "async arrow with non-simple parameters",
+        "destructured parameter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "class declaration in finally block",
+        "static field"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "class declaration in finally block",
+        "instance field"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "class declaration in finally block",
+        "private method"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "super in object literal accessor",
+        "non-computed getter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "reactnative",
+      "category": "syntax",
+      "path": [
+        "super in object literal accessor",
+        "non-computed setter"
       ],
       "pass": false
     }

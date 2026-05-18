@@ -1,12 +1,12 @@
 {
-  "tag": "hermes-v250829098.0.13",
-  "hermesSha": "745b440d800644ad6efdfa876f3cd033ccb1300a",
-  "hermesVersion": "Hermes 1.0.0 (HBC 98)",
-  "generatedAt": "2026-05-18T14:19:31.388Z",
+  "tag": "hermes-8a30722a",
+  "hermesSha": "8a30722ae32f338e5612e993bfb7c3492670bb39",
+  "hermesVersion": "Hermes 1.0.0 (HBC 99)",
+  "generatedAt": "2026-05-18T14:31:56.648Z",
   "summary": {
     "executed": 1207,
-    "pass": 844,
-    "fail": 363,
+    "pass": 888,
+    "fail": 319,
     "skipped": 0
   },
   "results": [
@@ -504,7 +504,7 @@
       "path": [
         "RegExp \"u\" flag, case folding"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -850,7 +850,7 @@
         "RegExp Unicode Property Escapes",
         "Unicode 16.0"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -859,7 +859,7 @@
         "RegExp Unicode Property Escapes",
         "Unicode 17.0"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -920,7 +920,7 @@
         "Symbol.prototype.description",
         "undefined description"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -1320,7 +1320,7 @@
         "WeakReferences",
         "FinalizationRegistry minimal support"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -1954,7 +1954,7 @@
       "path": [
         "Promise.withResolvers"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -1963,7 +1963,7 @@
         "Array Grouping",
         "Object.groupBy()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -1972,7 +1972,7 @@
         "Array Grouping",
         "Map.groupBy()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2052,7 +2052,7 @@
         "RegExp Pattern Modifiers",
         "i flag"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2061,7 +2061,7 @@
         "RegExp Pattern Modifiers",
         "m flag"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2070,7 +2070,7 @@
         "RegExp Pattern Modifiers",
         "s flag"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2079,7 +2079,7 @@
         "Iterator Helpers",
         "instanceof Iterator"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2088,7 +2088,7 @@
         "Iterator Helpers",
         "extends Iterator"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2097,7 +2097,7 @@
         "Iterator Helpers",
         "Iterator.from, iterable"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2106,7 +2106,7 @@
         "Iterator Helpers",
         "Iterator.from, iterator"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2115,7 +2115,7 @@
         "Iterator Helpers",
         "Iterator.prototype.drop"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2124,7 +2124,7 @@
         "Iterator Helpers",
         "Iterator.prototype.every"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2133,7 +2133,7 @@
         "Iterator Helpers",
         "Iterator.prototype.filter"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2142,7 +2142,7 @@
         "Iterator Helpers",
         "Iterator.prototype.find"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2151,7 +2151,7 @@
         "Iterator Helpers",
         "Iterator.prototype.flatMap"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2160,7 +2160,7 @@
         "Iterator Helpers",
         "Iterator.prototype.forEach"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2169,7 +2169,7 @@
         "Iterator Helpers",
         "Iterator.prototype.map"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2178,7 +2178,7 @@
         "Iterator Helpers",
         "Iterator.prototype.reduce"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2187,7 +2187,7 @@
         "Iterator Helpers",
         "Iterator.prototype.some"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2196,7 +2196,7 @@
         "Iterator Helpers",
         "Iterator.prototype.take"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2205,7 +2205,7 @@
         "Iterator Helpers",
         "Iterator.prototype.toArray"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2214,7 +2214,7 @@
         "Iterator Helpers",
         "Iterator.prototype[@@toStringTag]"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2239,7 +2239,7 @@
         "Uint8Array to/from base64 and hex",
         "Uint8Array.toBase64()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2248,7 +2248,7 @@
         "Uint8Array to/from base64 and hex",
         "Uint8Array.fromBase64()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2257,7 +2257,7 @@
         "Uint8Array to/from base64 and hex",
         "Uint8Array.setFromBase64()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2266,7 +2266,7 @@
         "Uint8Array to/from base64 and hex",
         "Uint8Array.toHex()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2275,7 +2275,7 @@
         "Uint8Array to/from base64 and hex",
         "Uint8Array.fromHex()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es2016plus",
@@ -2284,7 +2284,7 @@
         "Uint8Array to/from base64 and hex",
         "Uint8Array.setFromHex()"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es5",
@@ -6655,7 +6655,7 @@
         "Promise",
         "Promise.prototype isn't an instance"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es6",
@@ -7033,7 +7033,7 @@
         "well-known symbols",
         "Symbol.toStringTag, new built-ins"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es6",
@@ -7177,7 +7177,7 @@
         "function \"name\" property",
         "symbol-keyed methods"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "es6",
@@ -10733,7 +10733,7 @@
         "async arrow with non-simple parameters",
         "rest parameter"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10742,7 +10742,7 @@
         "async arrow with non-simple parameters",
         "default parameter"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10751,7 +10751,7 @@
         "async arrow with non-simple parameters",
         "destructured parameter"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10760,7 +10760,7 @@
         "class declaration in finally block",
         "static field"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10769,7 +10769,7 @@
         "class declaration in finally block",
         "instance field"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10778,7 +10778,7 @@
         "class declaration in finally block",
         "private method"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10787,7 +10787,7 @@
         "super in object literal accessor",
         "non-computed getter"
       ],
-      "pass": false
+      "pass": true
     },
     {
       "suite": "reactnative",
@@ -10796,7 +10796,7 @@
         "super in object literal accessor",
         "non-computed setter"
       ],
-      "pass": false
+      "pass": true
     }
   ]
 }

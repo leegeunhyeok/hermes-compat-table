@@ -13,6 +13,7 @@ import { tmpdir } from "node:os";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const COMPAT_DIR = join(ROOT, "vendor/compat-table");
+const SPECS_DIR = join(ROOT, "specs");
 const RESULTS_DIR = join(ROOT, "results");
 const SCRIPTS_DIR = join(ROOT, "scripts");
 
@@ -40,12 +41,25 @@ if (!existsSync(hermesBin)) {
 // requires (./data-common, ./test-utils/...) work.
 const compatRequire = createRequire(join(COMPAT_DIR, "package.json"));
 
-const dataFiles = readdirSync(COMPAT_DIR)
-  .filter((f) => /^data-[^.]+\.js$/.test(f))
-  .map((f) => ({
-    suite: f.replace(/^data-(.*)\.js$/, "$1"),
-    path: join(COMPAT_DIR, f),
-  }));
+const dataFiles = [
+  // Upstream kangax/compat-table data files (es5, es6, esintl, …).
+  ...readdirSync(COMPAT_DIR)
+    .filter((f) => /^data-[^.]+\.js$/.test(f))
+    .map((f) => ({
+      suite: f.replace(/^data-(.*)\.js$/, "$1"),
+      path: join(COMPAT_DIR, f),
+    })),
+  // Custom suites local to this repo (reactnative, …). Drop a `.cjs`
+  // file in `specs/` exporting { tests: [...] } to add a new suite.
+  ...(existsSync(SPECS_DIR)
+    ? readdirSync(SPECS_DIR)
+        .filter((f) => /\.cjs$/.test(f))
+        .map((f) => ({
+          suite: f.replace(/\.cjs$/, ""),
+          path: join(SPECS_DIR, f),
+        }))
+    : []),
+];
 
 const hermesVersionOut = execFileSync(hermesBin, ["-version"], {
   encoding: "utf8",
@@ -59,13 +73,16 @@ const hermesVersionLine = releaseMatch
 const hermesSrcDir = join(ROOT, ".cache/hermes/src");
 let hermesSha = null;
 try {
+  const ref = /^hermes-[0-9a-f]{7,40}$/.test(tag)
+    ? tag.replace(/^hermes-/, "")
+    : `refs/tags/${tag}^{commit}`;
   hermesSha = execFileSync(
     "git",
-    ["-C", hermesSrcDir, "rev-parse", `refs/tags/${tag}^{commit}`],
+    ["-C", hermesSrcDir, "rev-parse", ref],
     { encoding: "utf8" },
   ).trim();
 } catch {
-  // Source dir or tag missing; leave sha null.
+  // Source dir or ref missing; leave sha null.
 }
 
 console.log(`[run:compat] tag=${tag}`);
