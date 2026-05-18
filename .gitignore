@@ -12,6 +12,7 @@ build/
 out/
 bin/
 .cache/
+.astro/
 *.tsbuildinfo
 
 .DS_Store

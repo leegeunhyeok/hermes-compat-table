@@ -1,3 +1,8 @@
+---
+import "@/styles/global.css";
+import { App } from "@/App";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +11,6 @@
     <title>Hermes Compat Table</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <App client:load />
   </body>
 </html>

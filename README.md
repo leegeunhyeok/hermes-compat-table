@@ -38,12 +38,14 @@ git ls-remote --tags https://github.com/facebook/hermes.git | grep hermes-v
 
 ## Dashboard
 
-A static dashboard reads everything under `results/` and renders a
-per-spec pass/fail matrix across Hermes tags.
+An Astro-built static site (SSG) renders a per-spec pass/fail matrix
+across Hermes tags. Result JSONs under `results/` are pulled in at
+build time, so `dist/index.html` is fully prerendered (works without
+JavaScript for first paint; React island then hydrates for filters).
 
 ```sh
-yarn install      # first time only
-mise run web:dev      # local dev (http://localhost:5173)
+yarn install          # first time only
+mise run web:dev      # local dev (http://localhost:4321)
 mise run web:build    # static build to dist/
 mise run web:preview  # serve dist/ locally
 ```
