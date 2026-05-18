@@ -1,2 +1,6 @@
 [tools]
 node = "24"
+
+[tasks."build:hermes"]
+description = "Clone and build Hermes (hermesc) at a specific tag. Usage: mise run build:hermes <tag>"
+run = "./scripts/build-hermes.sh"
