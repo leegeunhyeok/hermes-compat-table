@@ -1,13 +1,17 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import {
   Table,
   TableBody,
@@ -90,31 +94,32 @@ export function App() {
     <div className="mx-auto max-w-[1400px] p-6 space-y-6">
       <header className="flex items-center justify-between">
         <h1 className="text-2xl font-semibold">Hermes Compat Table</h1>
-        <Button
-          asChild
-          variant="ghost"
-          size="icon"
-          aria-label="View on GitHub"
-        >
-          <a
-            href="https://github.com/leegeunhyeok/hermes-compat-table"
-            target="_blank"
-            rel="noreferrer noopener"
+        <div className="flex items-center gap-1">
+          <SettingsDialog
+            suite={suite}
+            onSuiteChange={setSuite}
+            filter={filter}
+            onFilterChange={setFilter}
+            tags={runs.map((r) => r.tag)}
+            selectedTags={selectedTags}
+            onSelectedTagsChange={setSelectedTags}
+          />
+          <Button
+            asChild
+            variant="ghost"
+            size="icon"
+            aria-label="View on GitHub"
           >
-            <GitHubIcon />
-          </a>
-        </Button>
+            <a
+              href="https://github.com/leegeunhyeok/hermes-compat-table"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <GitHubIcon />
+            </a>
+          </Button>
+        </div>
       </header>
-
-      <div className="flex flex-wrap items-center justify-end gap-2">
-        <SuiteSelect value={suite} onChange={setSuite} />
-        <FilterSelect value={filter} onChange={setFilter} />
-        <TagToggle
-          tags={runs.map((r) => r.tag)}
-          selected={selectedTags}
-          onChange={setSelectedTags}
-        />
-      </div>
 
       <Matrix
         groups={visibleGroups}
@@ -153,12 +158,17 @@ function Matrix({
             >
               <div className="flex justify-center gap-1 pb-1">
                 {r.reactNativeVersion && (
-                  <Badge
-                    variant="outline"
-                    className="px-1.5 py-0 text-[9px] font-medium"
-                  >
-                    {r.reactNativeVersion}
-                  </Badge>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Badge
+                        variant="outline"
+                        className="px-1.5 py-0 text-[9px] font-medium cursor-help"
+                      >
+                        {r.reactNativeVersion}
+                      </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>React Native version</TooltipContent>
+                  </Tooltip>
                 )}
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -363,123 +373,147 @@ function ResultCell({ v }: { v: boolean | undefined }) {
   );
 }
 
-function SuiteSelect({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (v: string) => void;
-}) {
-  return (
-    <Select value={value} onValueChange={onChange}>
-      <SelectTrigger className="w-[140px]">
-        <SelectValue placeholder="Suite" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="all">All suites</SelectItem>
-        {allSuites.map((s) => (
-          <SelectItem key={s} value={s}>
-            {s}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  );
-}
-
-function FilterSelect({
-  value,
-  onChange,
-}: {
-  value: Filter;
-  onChange: (v: Filter) => void;
-}) {
-  return (
-    <Select value={value} onValueChange={(v) => onChange(v as Filter)}>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="all">All specs</SelectItem>
-        <SelectItem value="anyFail">Any failing</SelectItem>
-        <SelectItem value="diff">Differing across tags</SelectItem>
-      </SelectContent>
-    </Select>
-  );
-}
-
-function TagToggle({
+function SettingsDialog({
+  suite,
+  onSuiteChange,
+  filter,
+  onFilterChange,
   tags,
-  selected,
-  onChange,
+  selectedTags,
+  onSelectedTagsChange,
 }: {
+  suite: string;
+  onSuiteChange: (v: string) => void;
+  filter: Filter;
+  onFilterChange: (v: Filter) => void;
   tags: string[];
-  selected: string[];
-  onChange: (next: string[]) => void;
+  selectedTags: string[];
+  onSelectedTagsChange: (next: string[]) => void;
 }) {
-  const [open, setOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: MouseEvent) => {
-      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("mousedown", onDown);
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("mousedown", onDown);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
-
-  const toggle = (t: string) => {
-    const on = selected.includes(t);
-    if (on && selected.length === 1) return;
-    onChange(on ? selected.filter((x) => x !== t) : [...selected, t]);
+  const toggleTag = (t: string) => {
+    const on = selectedTags.includes(t);
+    if (on && selectedTags.length === 1) return;
+    onSelectedTagsChange(
+      on ? selectedTags.filter((x) => x !== t) : [...selectedTags, t],
+    );
   };
 
   return (
-    <div ref={rootRef} className="relative">
-      <Button
-        size="sm"
-        variant="outline"
-        onClick={() => setOpen((v) => !v)}
-        className="font-mono text-xs"
-      >
-        Results · {selected.length}/{tags.length} ▾
-      </Button>
-      {open && (
-        <div className="absolute right-0 z-30 mt-1 min-w-[200px] rounded-md border bg-popover p-1 shadow-md">
-          {tags.map((t) => {
-            const on = selected.includes(t);
-            const disabled = on && selected.length === 1;
-            return (
-              <label
-                key={t}
-                className={`flex items-center gap-2 rounded px-2 py-1.5 text-sm font-mono ${
-                  disabled
-                    ? "cursor-not-allowed opacity-60"
-                    : "cursor-pointer hover:bg-accent"
-                }`}
-              >
-                <input
-                  type="checkbox"
-                  className="h-3.5 w-3.5"
-                  checked={on}
-                  disabled={disabled}
-                  onChange={() => toggle(t)}
-                />
-                <span>{shortTag(t)}</span>
-              </label>
-            );
-          })}
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="ghost" size="icon" aria-label="Settings">
+          <SettingsIcon />
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Settings</DialogTitle>
+          <DialogDescription>
+            Filter the compatibility matrix.
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="space-y-4">
+          <section>
+            <h3 className="mb-2 text-sm font-semibold">Suite</h3>
+            <RadioGroup
+              value={suite}
+              onValueChange={onSuiteChange}
+              className="grid grid-cols-2 gap-2"
+            >
+              <RadioOption value="all" id="suite-all" label="All suites" />
+              {allSuites.map((s) => (
+                <RadioOption key={s} value={s} id={`suite-${s}`} label={s} />
+              ))}
+            </RadioGroup>
+          </section>
+
+          <section>
+            <h3 className="mb-2 text-sm font-semibold">Specs</h3>
+            <RadioGroup
+              value={filter}
+              onValueChange={(v) => onFilterChange(v as Filter)}
+            >
+              <RadioOption value="all" id="filter-all" label="All specs" />
+              <RadioOption
+                value="anyFail"
+                id="filter-anyFail"
+                label="Any failing"
+              />
+              <RadioOption
+                value="diff"
+                id="filter-diff"
+                label="Differing across hermes versions"
+              />
+            </RadioGroup>
+          </section>
+
+          <section>
+            <h3 className="mb-2 text-sm font-semibold">Results</h3>
+            <div className="grid gap-2">
+              {tags.map((t) => {
+                const on = selectedTags.includes(t);
+                const disabled = on && selectedTags.length === 1;
+                const id = `tag-${t}`;
+                return (
+                  <div key={t} className="flex items-center gap-2">
+                    <Checkbox
+                      id={id}
+                      checked={on}
+                      disabled={disabled}
+                      onCheckedChange={() => toggleTag(t)}
+                    />
+                    <Label
+                      htmlFor={id}
+                      className={`font-mono text-sm ${disabled ? "opacity-60" : "cursor-pointer"}`}
+                    >
+                      {shortTag(t)}
+                    </Label>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
         </div>
-      )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+function RadioOption({
+  value,
+  id,
+  label,
+}: {
+  value: string;
+  id: string;
+  label: string;
+}) {
+  return (
+    <div className="flex items-center gap-2">
+      <RadioGroupItem value={value} id={id} />
+      <Label htmlFor={id} className="cursor-pointer font-normal">
+        {label}
+      </Label>
     </div>
+  );
+}
+
+function SettingsIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+    </svg>
   );
 }
 
