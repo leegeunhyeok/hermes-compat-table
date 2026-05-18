@@ -2,5 +2,9 @@
 node = "24"
 
 [tasks."build:hermes"]
-description = "Clone and build Hermes (hermesc) at a specific tag. Usage: mise run build:hermes <tag>"
+description = "Clone and build Hermes (hermes + hermesc) at a specific tag. Usage: mise run build:hermes <tag>"
 run = "./scripts/build-hermes.sh"
+
+[tasks."run:compat"]
+description = "Run compat-table specs against built Hermes for <tag>. Builds automatically if binary missing. Usage: mise run run:compat <tag>"
+run = "node ./scripts/run-compat.mjs"

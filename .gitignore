@@ -12,6 +12,7 @@ build/
 out/
 bin/
 .cache/
+results/
 
 .DS_Store
 *.log
