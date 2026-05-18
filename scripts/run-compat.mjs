@@ -61,6 +61,18 @@ const hermesVersionLine = releaseMatch
   ? `Hermes ${releaseMatch[1]} (HBC ${bytecodeMatch?.[1] ?? "?"})`
   : hermesVersionOut.split("\n")[0];
 
+const hermesSrcDir = join(ROOT, ".cache/hermes/src");
+let hermesSha = null;
+try {
+  hermesSha = execFileSync(
+    "git",
+    ["-C", hermesSrcDir, "rev-parse", `refs/tags/${tag}^{commit}`],
+    { encoding: "utf8" },
+  ).trim();
+} catch {
+  // Source dir or tag missing; leave sha null.
+}
+
 console.log(`[run:compat] tag=${tag}`);
 console.log(`[run:compat] hermes=${hermesVersionLine}`);
 console.log(`[run:compat] suites=${dataFiles.map((d) => d.suite).join(",")}`);
@@ -93,6 +105,7 @@ writeFileSync(
   JSON.stringify(
     {
       tag,
+      hermesSha,
       hermesVersion: hermesVersionLine,
       generatedAt: new Date().toISOString(),
       summary: { executed, pass, fail: executed - pass, skipped },

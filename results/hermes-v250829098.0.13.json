@@ -1,0 +1,6193 @@
+{
+  "tag": "hermes-v250829098.0.13",
+  "hermesSha": "745b440d800644ad6efdfa876f3cd033ccb1300a",
+  "hermesVersion": "Hermes 1.0.0 (HBC 98)",
+  "generatedAt": "2026-05-18T10:23:21.086Z",
+  "summary": {
+    "executed": 773,
+    "pass": 670,
+    "fail": 103,
+    "skipped": 0
+  },
+  "results": [
+    {
+      "suite": "es5",
+      "path": [
+        "Object/array literal extensions",
+        "Getter accessors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object/array literal extensions",
+        "Setter accessors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object/array literal extensions",
+        "Trailing commas in object literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object/array literal extensions",
+        "Trailing commas in array literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object/array literal extensions",
+        "Reserved words as property names"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.create"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.defineProperty"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.defineProperties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.getPrototypeOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.seal"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.freeze"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.preventExtensions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.isSealed"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.isFrozen"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.isExtensible"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.getOwnPropertyDescriptor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Object static methods",
+        "Object.getOwnPropertyNames"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.isArray"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.indexOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.lastIndexOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.every"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.some"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.forEach"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.map"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.filter"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.reduce"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.reduceRight"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.sort: compareFn must be function or undefined"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.sort: compareFn may be explicit undefined"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Array methods",
+        "Array.prototype.unshift: [].unshift(0) returns the unshifted count"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "String properties and methods",
+        "Property access on strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "String properties and methods",
+        "String.prototype.split"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "String properties and methods",
+        "String.prototype.substr"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "String properties and methods",
+        "String.prototype.trim"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Date methods",
+        "Date.prototype.toISOString"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Date methods",
+        "Date.now"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Date methods",
+        "Date.prototype.toJSON"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Function.prototype.bind"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "JSON"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Immutable globals",
+        "undefined"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Immutable globals",
+        "NaN"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Immutable globals",
+        "Infinity"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Number methods",
+        "Number.prototype.toExponential rounds properly"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Number methods",
+        "Number.prototype.toExponential throws on ±Infinity fractionDigits"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Number methods",
+        "Number.prototype.toExponential does not throw on edge cases"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Function.prototype.apply permits array-likes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "parseInt ignores leading zeros"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Function \"prototype\" property is non-enumerable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Arguments toStringTag is \"Arguments\""
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Zero-width chars in identifiers"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Unreserved words"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Enumerable properties can be shadowed by non-enumerables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Miscellaneous",
+        "Thrown functions have proper \"this\" values"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "reserved words"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "\"this\" is undefined in functions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "\"this\" is not coerced to object in primitive methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "\"this\" is not coerced to object in primitive accessors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "legacy octal is a SyntaxError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "assignment to unresolvable identifiers is a ReferenceError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "assignment to eval or arguments is a SyntaxError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "assignment to non-writable properties is a TypeError"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "eval or arguments bindings is a SyntaxError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "arguments.caller removed or is a TypeError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "arguments.callee is a TypeError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "(function (){}).caller and (function (){}).arguments is a TypeError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "arguments is unmapped"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "eval() can't create bindings"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "deleting bindings is a SyntaxError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "deleting non-configurable properties is a TypeError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "\"with\" is a SyntaxError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "repeated parameter names is a SyntaxError"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es5",
+      "path": [
+        "Strict mode",
+        "function expressions with matching name and argument are valid"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "proper tail calls (tail call optimisation)",
+        "direct recursion"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "proper tail calls (tail call optimisation)",
+        "mutual recursion"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "explicit undefined defers to the default"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "defaults can refer to previous params"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "arguments object interaction"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "temporal dead zone"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "separate scope"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "default function parameters",
+        "new Function() support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "rest parameters",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "rest parameters",
+        "function 'length' property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "rest parameters",
+        "arguments object interaction"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "rest parameters",
+        "can't be used in setters"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "rest parameters",
+        "new Function() support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with arrays, in function calls"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with arrays, in array literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with sparse arrays, in function calls"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with sparse arrays, in array literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with strings, in function calls"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with strings, in array literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with astral plane strings, in function calls"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with astral plane strings, in array literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with generator instances, in calls"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with generator instances, in arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with generic iterables, in calls"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with generic iterables, in arrays"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with instances of iterables, in calls"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "with instances of iterables, in arrays"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "spread syntax for iterable objects",
+        "spreading non-iterables is a runtime error"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "object literal extensions",
+        "computed properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "object literal extensions",
+        "shorthand properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "object literal extensions",
+        "shorthand methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "object literal extensions",
+        "string-keyed shorthand methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "object literal extensions",
+        "computed shorthand methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "object literal extensions",
+        "computed accessors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with sparse arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with astral plane strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "with instances of generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "iterator closing, break"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "for..of loops",
+        "iterator closing, throw"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "octal and binary literals",
+        "octal literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "octal and binary literals",
+        "binary literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "octal and binary literals",
+        "octal supported by Number()"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "octal and binary literals",
+        "binary supported by Number()"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "toString conversion"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "tagged template literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "passed array is frozen"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "line break normalisation"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "TemplateStrings call site caching"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "TemplateStrings permanent caching"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "template literals",
+        "arbitrary escape sequences in tagged template literals"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp \"y\" and \"u\" flags",
+        "\"y\" flag"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp \"y\" and \"u\" flags",
+        "\"y\" flag, lastIndex"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp \"y\" and \"u\" flags",
+        "\"u\" flag"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp \"y\" and \"u\" flags",
+        "\"u\" flag, non-BMP Unicode characters"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp \"y\" and \"u\" flags",
+        "\"u\" flag, Unicode code point escapes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp \"y\" and \"u\" flags",
+        "\"u\" flag, case folding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with sparse arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with astral plane strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with instances of generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "trailing commas in iterable patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "with objects"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "object destructuring with primitives"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "trailing commas in object patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "throws on null and undefined"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "computed properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "multiples in a single var statement"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "nested"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "in for-in loop heads"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "in for-of loop heads"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "in catch heads"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "rest"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "rest with identical number of elements in RHS"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "defaults"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, declarations",
+        "defaults, let temporal dead zone"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with sparse arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with astral plane strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with instances of generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "iterable destructuring expression"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "chained iterable destructuring"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "trailing commas in iterable patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "with objects"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "object destructuring with primitives"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "trailing commas in object patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "object destructuring expression"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "parenthesised left-hand-side is a syntax error"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "chained object destructuring"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "throws on null and undefined"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "computed properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "nested"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "rest"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "rest with identical number of elements in RHS"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "nested rest"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "empty patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, assignment",
+        "defaults"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with sparse arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with astral plane strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with instances of generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "trailing commas in iterable patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "with objects"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "object destructuring with primitives"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "trailing commas in object patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "throws on null and undefined"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "computed properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "nested"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "'arguments' interaction"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "new Function() support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "in parameters, function 'length' property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "rest"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "empty patterns"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "defaults"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "defaults, separate scope"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "defaults, new Function() support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "aliased defaults, arrow function"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "shorthand defaults, arrow function"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "destructuring, parameters",
+        "duplicate identifier"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Unicode code point escapes",
+        "in strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Unicode code point escapes",
+        "in identifiers"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Unicode code point escapes",
+        "in property key definitions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Unicode code point escapes",
+        "in property key accesses"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "new.target",
+        "in constructors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "new.target",
+        "assignment is an early error"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "basic support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "is block-scoped"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "scope shadow resolution"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "cannot be in statements"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "redefining a const is an error"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "for loop statement scope"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "for-in loop iteration scope"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "for-of loop iteration scope"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "temporal dead zone"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "basic support (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "is block-scoped (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "scope shadow resolution (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "cannot be in statements (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "redefining a const (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "for loop statement scope (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "for-in loop iteration scope (strict mode)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "for-of loop iteration scope (strict mode)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "const",
+        "temporal dead zone (strict mode)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "basic support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "is block-scoped"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "scope shadow resolution"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "cannot be in statements"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "for loop statement scope"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "temporal dead zone"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "for/for-in loop iteration scope"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "for-in loop binding shadowing parameter"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "basic support (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "is block-scoped (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "scope shadow resolution (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "cannot be in statements (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "for loop statement scope (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "temporal dead zone (strict mode)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "for/for-in loop iteration scope (strict mode)"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "let",
+        "for-in loop binding shadowing parameter (strict mode)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "block-level function declaration"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "0 parameters"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "1 parameter, no brackets"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "multiple parameters"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "lexical \"this\" binding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "\"this\" unchanged by call or apply"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "can't be bound, can be curried"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "lexical \"arguments\" binding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "no line break between params and <code>=></code>"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "correct precedence"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "no \"prototype\" property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "lexical \"super\" binding in constructors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "lexical \"super\" binding in methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "arrow functions",
+        "lexical \"new.target\" binding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "class statement"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "is block-scoped"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "class expression"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "anonymous class"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "constructor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "prototype methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "string-keyed methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "computed prototype methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "optional semicolons"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "static methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "computed static methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "accessor properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "computed accessor properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "static accessor properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "computed static accessor properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "class name is lexically scoped"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "computed names, temporal dead zone"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "methods aren't enumerable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "implicit strict mode"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "extends"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "extends expressions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "extends null"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "class",
+        "new.target"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "statement in constructors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "expression in constructors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "in methods, property access"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "in methods, method calls"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "method calls use correct \"this\" binding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "constructor calls use correct \"new.target\" binding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "is statically bound"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "super",
+        "super() invokes the correct constructor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "generator function expressions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "correct \"this\" binding"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "can't use \"this\" with new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "sending"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "%GeneratorPrototype%"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "%GeneratorPrototype% prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "%GeneratorPrototype%.constructor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "%GeneratorPrototype%.throw"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "%GeneratorPrototype%.return"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield operator precedence"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, sparse arrays"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, astral plane strings"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, instances of iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield * on non-iterables is a runtime error"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "yield *, iterator closing via throw()"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "shorthand generator methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "string-keyed shorthand generator methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "computed shorthand generators"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "shorthand generator methods, classes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "computed shorthand generators, classes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "generators",
+        "shorthand generators can't be constructors"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Int8Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Uint8Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Uint8ClampedArray"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Int16Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Uint16Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Int32Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Uint32Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Float32Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "Float64Array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Int8)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Uint8)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Int16)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Uint16)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Int32)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Uint32)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Float32)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "DataView (Float64)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "ArrayBuffer[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "constructors require new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "constructors accept generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "correct prototype chains"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.from"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.of"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.subarray"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.join"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.indexOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.lastIndexOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.slice"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.every"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.filter"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.forEach"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.map"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.reduce"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.reduceRight"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.reverse"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.some"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.sort"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.copyWithin"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.find"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.findIndex"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.fill"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.values"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype.entries"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%.prototype[Symbol.iterator]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "typed arrays",
+        "%TypedArray%[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "constructor arguments"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "constructor accepts null"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "constructor invokes set"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.set returns this"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "-0 key converts to +0"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.size"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.delete"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.clear"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.forEach"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.values"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype.entries"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype[Symbol.iterator]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map.prototype isn't an instance"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map iterator prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Map",
+        "Map[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "constructor arguments"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "constructor accepts null"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "constructor invokes add"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.add returns this"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "-0 key converts to +0"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.size"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.delete"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.clear"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.forEach"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.values"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype.entries"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype[Symbol.iterator]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set.prototype isn't an instance"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set iterator prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Set",
+        "Set[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "constructor arguments"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "constructor accepts null"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "constructor invokes set"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "frozen objects as keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "WeakMap.prototype.set returns this"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "WeakMap.prototype.delete"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "no WeakMap.prototype.clear method"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        ".has, .get and .delete methods accept primitives"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakMap",
+        "WeakMap.prototype isn't an instance"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "constructor arguments"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "constructor accepts null"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "constructor invokes add"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "WeakSet.prototype.add returns this"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "WeakSet.prototype.delete"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "no WeakSet.prototype.clear method"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        ".has and .delete methods accept primitives"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "WeakSet",
+        "WeakSet.prototype isn't an instance"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "no \"prototype\" property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"get\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"get\" handler, instances of proxies"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"get\" handler invariants"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"set\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"set\" handler, instances of proxies"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"set\" handler invariants"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"has\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"has\" handler, instances of proxies"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"has\" handler invariants"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"deleteProperty\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"deleteProperty\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"getOwnPropertyDescriptor\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"getOwnPropertyDescriptor\" handler invariants"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"defineProperty\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"defineProperty\" handler invariants"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"getPrototypeOf\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"getPrototypeOf\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"setPrototypeOf\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"setPrototypeOf\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"isExtensible\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"isExtensible\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"preventExtensions\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"preventExtensions\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"ownKeys\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"ownKeys\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"apply\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"apply\" handler invariant"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"construct\" handler"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "\"construct\" handler invariants"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "Proxy.revocable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "Array.isArray support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy",
+        "JSON.stringify support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.get"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.set"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.has"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.deleteProperty"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.getOwnPropertyDescriptor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.defineProperty"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.getPrototypeOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.setPrototypeOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.isExtensible"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.preventExtensions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.ownKeys, string keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.ownKeys, symbol keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.apply"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct sets new.target meta-property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct creates instances from third argument"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct, Array subclassing"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct, RegExp subclassing"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct, Function subclassing"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Reflect",
+        "Reflect.construct, Promise subclassing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "basic functionality"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "constructor requires new"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "Promise.prototype isn't an instance"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "Promise.all"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "Promise.all, generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "Promise.race"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "Promise.race, generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise",
+        "Promise[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "typeof support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "symbol keys are hidden to pre-ES6 code"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "Object.defineProperty support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "symbols inherit from Symbol.prototype"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "cannot coerce to string or number"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "can convert with String()"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "new Symbol() throws"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "Object(symbol)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "JSON.stringify ignores symbol primitives"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "JSON.stringify ignores symbol objects"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Symbol",
+        "global symbol registry"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.hasInstance"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.isConcatSpreadable, non-spreadable array"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.isConcatSpreadable, spreadable object with poisoned getter"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.iterator, existence"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.iterator, arguments object"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, existence"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, Array.prototype.concat"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, Array.prototype.filter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, Array.prototype.map"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, Array.prototype.slice"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, Array.prototype.splice"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, RegExp.prototype[Symbol.split]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.species, Promise.prototype.then"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.replace"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.search"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.split"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.match"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.match, RegExp constructor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.match, String.prototype.startsWith"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.match, String.prototype.endsWith"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.match, String.prototype.includes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.toPrimitive"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.toStringTag"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.toStringTag affects existing built-ins"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.toStringTag, new built-ins"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.toStringTag, misc. built-ins"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "well-known symbols",
+        "Symbol.unscopables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods",
+        "Object.assign"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods",
+        "Object.is"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods",
+        "Object.getOwnPropertySymbols"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods",
+        "Object.setPrototypeOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "function statements"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "function expressions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "new Function"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "bound functions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "variables (function)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "object methods (function)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "accessor properties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "shorthand methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "shorthand methods (no lexical binding)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "symbol-keyed methods"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "class statements"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "class expressions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "variables (class)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "object methods (class)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "class prototype methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "class static methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "function \"name\" property",
+        "isn't writable, is configurable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String static methods",
+        "String.raw"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String static methods",
+        "String.fromCodePoint"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.codePointAt"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.normalize"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.repeat"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.startsWith"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.startsWith throws on RegExp"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.endsWith"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.endsWith throws on RegExp"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype.includes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String.prototype[Symbol.iterator]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype methods",
+        "String iterator prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype properties",
+        "RegExp.prototype.flags"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype properties",
+        "RegExp.prototype[Symbol.match]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype properties",
+        "RegExp.prototype[Symbol.replace]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype properties",
+        "RegExp.prototype[Symbol.split]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype properties",
+        "RegExp.prototype[Symbol.search]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype properties",
+        "RegExp[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from, array-like objects"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from, generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from, generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from, instances of generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from map function, array-like objects"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from map function, generator instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from map function, generic iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from map function, instances of iterables"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.from, iterator closing"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array.of"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array static methods",
+        "Array[Symbol.species]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.copyWithin"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.find"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.findIndex"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.fill"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.values"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.entries"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype.splice"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype[Symbol.iterator]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array iterator prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array.prototype methods",
+        "Array.prototype[Symbol.unscopables]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.isFinite"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.isInteger"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.isSafeInteger"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.isNaN"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.parseFloat"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.parseInt"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.EPSILON"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.MIN_SAFE_INTEGER"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Number properties",
+        "Number.MAX_SAFE_INTEGER"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.clz32"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.imul"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.sign"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.log10"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.log2"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.log1p"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.expm1"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.cosh"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.sinh"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.tanh"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.acosh"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.asinh"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.atanh"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.trunc"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.fround"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.cbrt"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Math methods",
+        "Math.hypot"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Date.prototype[Symbol.toPrimitive]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "length property (accessing)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "length property (setting)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "correct prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.isArray support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.prototype.concat"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.prototype.filter"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.prototype.map"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.prototype.slice"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.prototype.splice"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.from"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Array is subclassable",
+        "Array.of"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp is subclassable",
+        "basic functionality"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp is subclassable",
+        "correct prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp is subclassable",
+        "RegExp.prototype.exec"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp is subclassable",
+        "RegExp.prototype.test"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Function is subclassable",
+        "can be called"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Function is subclassable",
+        "correct prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Function is subclassable",
+        "can be used with \"new\""
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Function is subclassable",
+        "Function.prototype.call"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Function is subclassable",
+        "Function.prototype.apply"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Function is subclassable",
+        "Function.prototype.bind"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise is subclassable",
+        "basic functionality"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise is subclassable",
+        "correct prototype chain"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise is subclassable",
+        "Promise.all"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Promise is subclassable",
+        "Promise.race"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous subclassables",
+        "Boolean is subclassable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous subclassables",
+        "Number is subclassable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous subclassables",
+        "String is subclassable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous subclassables",
+        "Error is subclassable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous subclassables",
+        "Map is subclassable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous subclassables",
+        "Set is subclassable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "prototype of bound functions",
+        "basic functions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "prototype of bound functions",
+        "generator functions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "prototype of bound functions",
+        "arrow functions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "prototype of bound functions",
+        "classes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "prototype of bound functions",
+        "subclasses"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "ToPrimitive"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "CreateListFromArrayLike"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "instanceof operator"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "HasBinding"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "CreateDynamicFunction"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "ClassDefinitionEvaluation"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "IteratorComplete, IteratorValue"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "ToPropertyDescriptor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Object.assign"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Object.defineProperties"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Function.prototype.bind"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Error.prototype.toString"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "String.raw"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp constructor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype.flags"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype.test"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype.toString"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype[Symbol.match]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype[Symbol.replace]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype[Symbol.search]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "RegExp.prototype[Symbol.split]"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.from"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype.concat"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype iteration methods"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype.pop"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype.reverse"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype.shift"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype.splice"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Array.prototype.toString"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "JSON.stringify"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Promise resolve functions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "String.prototype.match"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "String.prototype.replace"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "String.prototype.search"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "String.prototype.split"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'get' calls",
+        "Date.prototype.toJSON"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Object.assign"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.from"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.of"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.copyWithin"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.fill"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.pop"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.push"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.reverse"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.shift"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.splice"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'set' calls",
+        "Array.prototype.unshift"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'defineProperty' calls",
+        "[[Set]]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'defineProperty' calls",
+        "SetIntegrityLevel"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'deleteProperty' calls",
+        "Array.prototype.copyWithin"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'deleteProperty' calls",
+        "Array.prototype.pop"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'deleteProperty' calls",
+        "Array.prototype.reverse"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'deleteProperty' calls",
+        "Array.prototype.shift"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'deleteProperty' calls",
+        "Array.prototype.splice"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'deleteProperty' calls",
+        "Array.prototype.unshift"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'getOwnPropertyDescriptor' calls",
+        "[[Set]]"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'getOwnPropertyDescriptor' calls",
+        "Object.assign"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'getOwnPropertyDescriptor' calls",
+        "Object.prototype.hasOwnProperty"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'getOwnPropertyDescriptor' calls",
+        "Function.prototype.bind"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'ownKeys' calls",
+        "SetIntegrityLevel"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'ownKeys' calls",
+        "TestIntegrityLevel"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Proxy, internal 'ownKeys' calls",
+        "SerializeJSONObject"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.getPrototypeOf"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.getOwnPropertyDescriptor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.getOwnPropertyNames"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.seal"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.freeze"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.preventExtensions"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.isSealed"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.isFrozen"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.isExtensible"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object static methods accept primitives",
+        "Object.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "Object.keys"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "Object.getOwnPropertyNames"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "Object.assign"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "JSON.stringify"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "JSON.parse"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "Reflect.ownKeys, string key order"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "own property order",
+        "Reflect.ownKeys, symbol key order"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Updated identifier syntax",
+        "var ⸯ;"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Updated identifier syntax",
+        "var 𐋀;"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Updated identifier syntax",
+        "no escaped reserved words as identifiers"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "duplicate property names in strict mode"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "no semicolon needed after do-while"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "no assignments allowed in for-in head in strict mode"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "accessors aren't constructors"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "Invalid Date"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "RegExp constructor can alter flags"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "RegExp.prototype.toString generic and uses \"flags\" property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "built-in prototypes are not instances"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "miscellaneous",
+        "function 'length' is configurable"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "non-strict function semantics",
+        "hoisted block-level function declaration"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "non-strict function semantics",
+        "labeled function statements"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "non-strict function semantics",
+        "function statements in if-statement clauses"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "__proto__ in object literals",
+        "basic support"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "__proto__ in object literals",
+        "multiple __proto__ is an error"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "__proto__ in object literals",
+        "not a computed property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "__proto__ in object literals",
+        "not a shorthand property"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "__proto__ in object literals",
+        "not a shorthand method"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object.prototype.__proto__",
+        "get prototype"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object.prototype.__proto__",
+        "set prototype"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object.prototype.__proto__",
+        "absent from Object.create(null)"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object.prototype.__proto__",
+        "present in hasOwnProperty()"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object.prototype.__proto__",
+        "correct property descriptor"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "Object.prototype.__proto__",
+        "present in Object.getOwnPropertyNames()"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype HTML methods",
+        "existence"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype HTML methods",
+        "tags' names are lowercase"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "String.prototype HTML methods",
+        "quotes in arguments are escaped"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype.compile",
+        "basic functionality"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp.prototype.compile",
+        "returns this"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "hyphens in character sets"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "invalid character escapes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "invalid control-character escapes"
+      ],
+      "pass": false
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "invalid Unicode escapes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "invalid hexadecimal escapes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "incomplete patterns and quantifiers"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "octal escape sequences"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "RegExp syntax extensions",
+        "invalid backreferences become octal escapes"
+      ],
+      "pass": true
+    },
+    {
+      "suite": "es6",
+      "path": [
+        "HTML-style comments"
+      ],
+      "pass": false
+    }
+  ]
+}
