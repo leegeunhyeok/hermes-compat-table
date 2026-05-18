@@ -38,18 +38,19 @@ else
 fi
 
 JOBS="$(sysctl -n hw.ncpu 2>/dev/null || nproc 2>/dev/null || echo 4)"
-echo "==> Building hermesc (-j$JOBS)"
-cmake --build "$BUILD_DIR" --target hermesc -j"$JOBS"
+echo "==> Building hermes, hermesc (-j$JOBS)"
+cmake --build "$BUILD_DIR" --target hermes hermesc -j"$JOBS"
 
-HERMESC_BIN="$BUILD_DIR/bin/hermesc"
-if [[ ! -x "$HERMESC_BIN" ]]; then
-  echo "ERROR: hermesc binary not found at $HERMESC_BIN" >&2
-  exit 1
-fi
-
-cp "$HERMESC_BIN" "$BIN_DIR/hermesc"
+for name in hermes hermesc; do
+  src="$BUILD_DIR/bin/$name"
+  if [[ ! -x "$src" ]]; then
+    echo "ERROR: $name binary not found at $src" >&2
+    exit 1
+  fi
+  cp "$src" "$BIN_DIR/$name"
+done
 
 echo
 echo "==> Build complete"
-echo "    Binary: $BIN_DIR/hermesc"
-"$BIN_DIR/hermesc" -version || true
+echo "    Binaries: $BIN_DIR/{hermes,hermesc}"
+"$BIN_DIR/hermes" -version || true
