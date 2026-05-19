@@ -51,10 +51,12 @@ interface SpecGroup {
   subtests: SubtestRow[];
 }
 
-// compat-table palette
-const COLOR_PASS = "#44ab44";
-const COLOR_PARTIAL = "#acc20a";
-const COLOR_FAIL = "#e11";
+// compat-table grade color: red (0) → yellow (0.5) → green (1)
+function gradeColor(ratio: number): string {
+  const hue = (120 * ratio) | 0;
+  const sat = (86 - 44 * ratio) | 0;
+  return `hsl(${hue}, ${sat}%, 50%)`;
+}
 
 export function App() {
   const [selectedTags, setSelectedTags] = useState<string[]>(
@@ -334,7 +336,7 @@ function GroupStatusCell({
   }
   const allPass = s.pass === s.total;
   const allFail = s.pass === 0;
-  const bg = allPass ? COLOR_PASS : allFail ? COLOR_FAIL : COLOR_PARTIAL;
+  const bg = gradeColor(s.pass / s.total);
   const label = isLeaf
     ? allPass
       ? "yes"
@@ -362,7 +364,7 @@ function ResultCell({ v }: { v: boolean | undefined }) {
       </TableCell>
     );
   }
-  const bg = v ? COLOR_PASS : COLOR_FAIL;
+  const bg = gradeColor(v ? 1 : 0);
   return (
     <TableCell
       className="px-2 py-1 text-center font-mono text-white"
