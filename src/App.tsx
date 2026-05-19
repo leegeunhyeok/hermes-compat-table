@@ -100,7 +100,7 @@ export function App() {
             onSuiteChange={setSuite}
             filter={filter}
             onFilterChange={setFilter}
-            tags={runs.map((r) => r.tag)}
+            runs={runs}
             selectedTags={selectedTags}
             onSelectedTagsChange={setSelectedTags}
           />
@@ -378,7 +378,7 @@ function SettingsDialog({
   onSuiteChange,
   filter,
   onFilterChange,
-  tags,
+  runs,
   selectedTags,
   onSelectedTagsChange,
 }: {
@@ -386,7 +386,7 @@ function SettingsDialog({
   onSuiteChange: (v: string) => void;
   filter: Filter;
   onFilterChange: (v: Filter) => void;
-  tags: string[];
+  runs: CompatRun[];
   selectedTags: string[];
   onSelectedTagsChange: (next: string[]) => void;
 }) {
@@ -451,7 +451,8 @@ function SettingsDialog({
           <section>
             <h3 className="mb-2 text-sm font-semibold">Results</h3>
             <div className="grid gap-2">
-              {tags.map((t) => {
+              {runs.map((r) => {
+                const t = r.tag;
                 const on = selectedTags.includes(t);
                 const disabled = on && selectedTags.length === 1;
                 const id = `tag-${t}`;
@@ -465,9 +466,17 @@ function SettingsDialog({
                     />
                     <Label
                       htmlFor={id}
-                      className={`font-mono text-sm ${disabled ? "opacity-60" : "cursor-pointer"}`}
+                      className={`flex items-center gap-2 font-mono text-sm ${disabled ? "opacity-60" : "cursor-pointer"}`}
                     >
-                      {shortTag(t)}
+                      <span>{shortTag(t)}</span>
+                      {r.reactNativeVersion && (
+                        <Badge
+                          variant="outline"
+                          className="px-1.5 py-0 text-[9px] font-medium"
+                        >
+                          {r.reactNativeVersion}
+                        </Badge>
+                      )}
                     </Label>
                   </div>
                 );
